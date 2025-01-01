@@ -1,0 +1,145 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #181515;
+    padding: 20px;
+    background-image: url('webBG.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the whole body */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes the background fixed while scrolling */
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #2C3E50;
+}
+
+/* Form styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(228, 234, 235, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Make the form a positioning context */
+}
+
+form h2 {
+    margin-bottom: 15px;
+    color: #34495E;
+}
+
+label {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: #373f3f;
+}
+
+input[type="text"] {
+    width: 50px;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+
+/* Results styling */
+h2 {
+    margin-top: 30px;
+    color: #2C3E50;
+    text-align: center;
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;   /* This allows items to wrap to the next line if needed */
+    justify-content: center; /* Centers the boxes in the container */
+    gap: 15px;  /* Adds space between the boxes */
+    margin-top: 20px;
+}
+
+.result-box {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 120px; /* Width of each box */
+    text-align: center;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.result-box:hover {
+    background-color: #2980b9;
+}
+
+.result-box p {
+    margin: 0;
+}
+
+/* Button container to place both buttons next to each other */
+.button-container {
+    display: flex;
+    gap: 10px; /* Adds spacing between the buttons */
+    justify-content: center; /* Centers the buttons horizontally */
+    margin-top: 20px; /* Adds space between the form inputs and the buttons */
+}
+
+/* Styling for the submit and reset buttons */
+button, input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* For anchor link wrapping the reset button */
+a button {
+    text-decoration: none; /* Remove underline from anchor link */
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between; /* Distribute input fields evenly */
+    gap: 5px; /* Add space between the input fields */
+}
+
+.input-row input {
+    width: 50px; /* Adjust the width of the input boxes */
+    height: 50px; /* Adjust the height of the input boxes */
+    font-size: 20px; /* Increase font size for readability */
+    text-align: center; /* Center align the text inside the input */
+    border-radius: 5px; /* Rounded corners for the input fields */
+    border: 1px solid #000000; /* Light gray border */
+    background-color: #fffcfc; /* Light background */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.input-row input:focus {
+    background-color: #8adbded4; /* Change background color on focus */
+    border-color: #000000; /* Darker border on focus */
+}
+  
+.box.active {
+    background-color: lightgreen; 
+}

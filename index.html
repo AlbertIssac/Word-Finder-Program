@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search App</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    
+    <!-- Form to accept user input -->
+    <form action="/" method="POST">
+        <h1>Word Search Application</h1>
+        <h2>Enter the letters to include at fixed positions:</h2>
+        <div class="input-row">
+            <input type="text" name="letter1" maxlength="1" value="{{ letter1 or '' }}" oninput="this.value = this.value.toUpperCase()" id="letter1" placeholder="1st" />
+            <input type="text" name="letter2" maxlength="1" value="{{ letter2 or '' }}" oninput="this.value = this.value.toUpperCase()" id="letter2" placeholder="2nd" />
+            <input type="text" name="letter3" maxlength="1" value="{{ letter3 or '' }}" oninput="this.value = this.value.toUpperCase()" id="letter3" placeholder="3rd" />
+            <input type="text" name="letter4" maxlength="1" value="{{ letter4 or '' }}" oninput="this.value = this.value.toUpperCase()" id="letter4" placeholder="4th" />
+            <input type="text" name="letter5" maxlength="1" value="{{ letter5 or '' }}" oninput="this.value = this.value.toUpperCase()" id="letter5" placeholder="5th" />
+        </div>
+        <!-- Include fixed letters -->
+      <!--  <h2>Enter the letters to include:</h2>
+        <label for="letter1">1st letter to include: </label><input type="text" name="letter1" maxlength="1" placeholder="" /><br>
+        <label for="letter2">2nd letter to include: </label><input type="text" name="letter2" maxlength="1" placeholder="" /><br>
+        <label for="letter3">3rd letter to include: </label><input type="text" name="letter3" maxlength="1" placeholder="" /><br>
+        <label for="letter4">4th letter to include: </label><input type="text" name="letter4" maxlength="1" placeholder="" /><br>
+        <label for="letter5">5th letter to include: </label><input type="text" name="letter5" maxlength="1" placeholder="" /><br> -->
+        
+        <!-- Include letters present but in no fixed positions -->
+        <h2>Enter letters to present in word (No Fixed Position):</h2>
+        <label for="present_letters">Letters to present: </label>
+        <input type="text" name="present_letters" value="{{ present_letters  }}" oninput="this.value = this.value.toUpperCase()" placeholder="" /><br> 
+        
+        <!-- Exclude letters -->
+        <h2>Enter letters to exclude from word (No Fixed Position):</h2>
+        <label for="exclude_letters">Letters to exclude: </label>
+        <input type="text" name="exclude_letters" value="{{ exclude_letters  }}" oninput="this.value = this.value.toUpperCase()" placeholder="" /><br><br>
+        
+        <div class="button-container">
+        <input type="submit" value="Search" />
+            <a href="{{ url_for('reset') }}">
+                <button type="button">Reset Search</button>
+            </a>
+        </div>
+    </form>
+
+    {% if search %}
+        <h2>Search Results:</h2>
+        <div class="results-container">
+            {% for word in words %}
+                <div class="result-box">
+                    <p>{{ word }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    </div>
+    <script src="script.js"></script> <!-- Link to the JS file -->
+</body>
+</html>
